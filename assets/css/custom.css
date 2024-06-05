@@ -1,0 +1,60 @@
+.email_popup_btn {
+    border: 1px solid #fe198d;
+    padding: 25px 40px 25px 40px;
+    color: #000000;
+    border-radius: 2px;
+    transition: 0.5s;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    outline: none !important;
+}
+.email_popup_btn:focus,
+.email_popup_btn:hover {
+    background-image: linear-gradient(90deg, var( --e-global-color-55d187e ) 0%, var( --e-global-color-6ce67d6 ) 100%);
+}
+.popup_form_wrap {
+    position: fixed;
+    background: #000000c2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: scroll;
+}
+.popup_form_wrap.active {
+    opacity: 1;
+    visibility: visible;
+}
+.popup_form {
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px;
+    border-radius: 5px;
+    margin-top: 110px;
+}
+.cs_flex {
+    display: flex;
+    gap: 10px;
+}
+.cs_input {
+    border: none !important;
+    border-bottom: 1px solid !important;
+    border-radius: 0 !important;
+    width: 35% !important;
+    outline: none !important;
+    padding: 0 !important;
+}
+.send_email_btn {
+    padding: 15px 45px;
+    margin-top: 15px;
+}
