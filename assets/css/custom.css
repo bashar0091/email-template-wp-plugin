@@ -24,7 +24,6 @@
     z-index: 999999;
     opacity: 0;
     visibility: hidden;
-    overflow-y: scroll;
 }
 .popup_form_wrap.active {
     opacity: 1;
@@ -32,7 +31,7 @@
 }
 .popup_form {
     background: #fff;
-    max-width: 800px;
+    width: 800px;
     margin: 0 auto;
     position: absolute;
     top: 50%;
@@ -40,11 +39,15 @@
     transform: translate(-50%, -50%);
     padding: 25px;
     border-radius: 5px;
-    margin-top: 110px;
+    margin-top: 20px;
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 50px;
 }
 .cs_flex {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 .cs_input {
     border: none !important;
@@ -57,4 +60,23 @@
 .send_email_btn {
     padding: 15px 45px;
     margin-top: 15px;
+}
+.on_input_show {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.close_popup {
+    display: inline-block;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+}
+
+@media (max-width: 899px) {
+    .popup_form {
+        width: 100%;
+        border-radius: 0;
+        margin-top: 0;
+        padding-bottom: 25px;
+    }
 }
