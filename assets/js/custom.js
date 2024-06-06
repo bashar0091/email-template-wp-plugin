@@ -32,4 +32,35 @@ jQuery(document).ready(function($){
         $(`.${get_id}`).text(get_val);
     });
 
+
+
+    // email template form submission 
+    $('#email_template_form').on('submit', function(e){
+        e.preventDefault();
+
+        var get_this = $(this);
+        var formData = get_this.serialize();
+
+        get_this.parent().find('.cs_loader').addClass('active');
+        get_this.css('opacity','0.3');
+
+        $.ajax({
+            type: 'POST',
+            url: fanAjax.ajaxurl,
+            data: {
+                action: 'email_template_form_handle',
+                form_data: formData,
+            },
+            success: function (response) {
+                get_this.parent().find('.cs_loader').removeClass('active');
+                get_this.css('opacity','1');
+                get_this.remove();
+                $('.thank__you').css('display', 'flex');
+            },
+            error: function (error) {
+                console.error('Error occurred:', error);
+            }
+        });
+    });
+
 });
